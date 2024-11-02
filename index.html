@@ -34,7 +34,26 @@
         .download-button:hover {
             background-color: #218838;
         }
+        .password-form {
+            display: none;
+            margin-top: 10px;
+        }
     </style>
+    <script>
+        function showPasswordForm() {
+            document.getElementById('passwordForm').style.display = 'block';
+        }
+
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const correctPassword = 'monMotDePasse'; // Remplace par ton mot de passe
+            if (password === correctPassword) {
+                window.location.href = 'chemin/vers/logiciel2.zip'; // Lien de téléchargement
+            } else {
+                alert('Mot de passe incorrect. Veuillez essayer à nouveau.');
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -48,8 +67,12 @@
 
     <div class="product">
         <h2>Logiciel Exemple 2</h2>
-        <p>Description du logiciel exemple 2.</p>
-        <a href="chemin/vers/logiciel2.zip" class="download-button" download>Télécharger</a>
+        <p>Description du logiciel exemple 2. Pour obtenir le mot de passe, veuillez payer sur mon serveur Discord.</p>
+        <button class="download-button" onclick="showPasswordForm()">Accéder au téléchargement</button>
+        <div id="passwordForm" class="password-form">
+            <input type="password" id="passwordInput" placeholder="Entrez le mot de passe" />
+            <button class="download-button" onclick="checkPassword()">Valider</button>
+        </div>
     </div>
 
     <div class="product">
